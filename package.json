@@ -1,23 +1,23 @@
 {
-  "name": "node_memcached",
-  "version": "1.1.2",
+  "name": "memcached-flags",
+  "version": "2.0.0",
   "description": "Memcached client library",
   "keywords": [
-    "memcached"
+    "memcached", "flags"
   ],
-  "author": "chylvina <chylvina@gmail.com>",
+  "author": "tangyao <tangyao@alipay.com>",
   "main": "./index.js",
   "scripts": {
-    "test": "node ./test.js"
+    "test": "make test"
   },
   "devDependencies": {
     "lodash": "^2.4.1",
-    "mocha": "^2.0.1",
-    "should": "^4.3.0"
+    "mocha": "*",
+    "should": "*"
   },
   "repository": {
     "type": "git",
-    "url": "git@github.com:chylvina/node_memcached.git"
+    "url": "git@github.com:node-modules/node_memcached.git"
   },
   "dependencies": {
     "debug": "^2.1.0",
