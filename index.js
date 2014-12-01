@@ -100,7 +100,7 @@ MemcachedClient.prototype.unref = function () {
     debug("Not connected yet, will unref later");
     this.once("connect", function () {
       this.unref();
-    })
+    });
   }
 };
 
@@ -356,7 +356,7 @@ MemcachedClient.prototype.on_data = function (data) {
 // if a domain is active, emit the error on the domain, which will serve the same function.
 // put this try/catch in its own function because V8 doesn't optimize this well yet.
 function try_callback(client, callback, reply) {
-  if (!reply || !reply.header || reply.header.status == undefined) {
+  if (!reply || !reply.header || reply.header.status === undefined) {
     client.emit("error", "can not pase message");
     return;
   }

@@ -1,11 +1,11 @@
 {
   "name": "memcached-flags",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "Memcached client library",
   "keywords": [
     "memcached", "flags"
   ],
-  "author": "tangyao <tangyao@alipay.com>",
+  "author": "tangyao <tangyao@alibaba-inc.com>",
   "main": "./index.js",
   "scripts": {
     "test": "make test"
@@ -21,6 +21,6 @@
   },
   "dependencies": {
     "debug": "^2.1.0",
-    "java.io": "~1.2.4"
+    "java.io": "~2.0.0"
   }
 }
