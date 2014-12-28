@@ -89,7 +89,7 @@ describe('#add()', function () {
 
           done();
         });
-      }, 1100);
+      }, 3000);
     });
   });
 });
@@ -268,4 +268,5 @@ describe('#delete()', function () {
       });
     });
   });
+
 });

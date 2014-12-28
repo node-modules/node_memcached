@@ -557,6 +557,10 @@ MemcachedClient.prototype.send_command = function (command, args, callback) {
     buf = makeRequestBuffer(protocol.opcode.PREPEND, args[0], '', args[1].toString(), '');
 
     buffered_writes += !stream.write(buf);
+  } else if (command === 'touch') {
+    extras = Buffer.concat([new Buffer('00000000', 'hex'), makeExpiration(args[1] || this.options.expires)]);
+    buf = makeRequestBuffer(protocol.opcode.TOUCH, args[0], extras, '', '');
+    buffered_writes += !stream.write(buf);
   }
 
   //if (exports.debug_mode) {
@@ -578,7 +582,7 @@ MemcachedClient.prototype.end = function () {
 };
 
 // This static list of commands is updated from time to time.  ./lib/commands.js can be updated with generate_commands.js
-commands = ["get", "add", "set", "auth", "quit", "delete", "replace", "increment", "decrement", "append", "prepend", "noop", "version"];
+commands = ["get", "add", "set", "auth", "quit", "delete", "replace", "increment", "decrement", "append", "prepend", "noop", "version", "touch"];
 
 commands.forEach(function (fullCommand) {
   var command = fullCommand.split(' ')[0];
