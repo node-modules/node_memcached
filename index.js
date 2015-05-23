@@ -244,9 +244,8 @@ MemcachedClient.prototype.ready_check = function () {
   this.send_anyway = true;  // secret flag to send_command to send something even if not "ready"
   this.noop(function (err, res) {
     if (err) {
-      return self.emit("error", "Ready check failed");
+      return self.emit("error", err);
     }
-
     self.on_ready();
   });
   this.send_anyway = false;
