@@ -557,7 +557,8 @@ MemcachedClient.prototype.send_command = function (command, args, callback) {
 
     buffered_writes += !stream.write(buf);
   } else if (command === 'touch') {
-    extras = Buffer.concat([new Buffer('00000000', 'hex'), makeExpiration(args[1] || this.options.expires)]);
+    // new Buffer('00000000', 'hex'),
+    extras = Buffer.concat([makeExpiration(args[1] || this.options.expires)]);
     buf = makeRequestBuffer(protocol.opcode.TOUCH, args[0], extras, '', '');
     buffered_writes += !stream.write(buf);
   }
