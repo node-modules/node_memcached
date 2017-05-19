@@ -3,7 +3,8 @@
   "version": "2.1.2",
   "description": "Memcached client library",
   "keywords": [
-    "memcached", "flags"
+    "memcached",
+    "flags"
   ],
   "author": "tangyao <tangyao@alibaba-inc.com>",
   "main": "./index.js",
@@ -11,7 +12,9 @@
     "test": "make test"
   },
   "files": [
-    "index.js", "protocol.js", "lib"
+    "index.js",
+    "protocol.js",
+    "lib"
   ],
   "devDependencies": {
     "lodash": "^2.4.1",
@@ -24,6 +27,6 @@
   },
   "dependencies": {
     "debug": "^2.1.0",
-    "java.io": "~2.0.0"
+    "java.io": "~2.1.2"
   }
 }
